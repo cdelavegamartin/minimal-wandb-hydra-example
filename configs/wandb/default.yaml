@@ -3,6 +3,3 @@ setup:
     project: hydra-example
     entity:
     mode: offline
-watch:
-    log: all
-    log_freq: 100
