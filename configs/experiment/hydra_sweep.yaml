@@ -5,11 +5,11 @@ defaults:
 
 hydra:
   run:
-    dir: outputs/testing/${now:%Y-%m-%d}--${now:%H-%M-%S}
+    dir: output/testing/${now:%Y-%m-%d}--${now:%H-%M-%S}
   job:
     chdir: False
   sweep:
-    dir: outputs/${now:%Y-%m-%d}--${now:%H-%M-%S}/${wandb.group}/${wandb.job_type}
+    dir: output/${now:%Y-%m-%d}--${now:%H-%M-%S}/${wandb.group}/${wandb.job_type}
     subdir: b-${dummy_hyperparams.b}
   sweeper:
     params:
