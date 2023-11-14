@@ -1,0 +1,4 @@
+---
+defaults:
+- wandb: default
+- dummy_hyperparams: default

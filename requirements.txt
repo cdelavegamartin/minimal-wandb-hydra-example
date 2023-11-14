@@ -1,0 +1,4 @@
+numpy
+hydra-core
+wandb
+hydra-joblib-launcher

@@ -1,0 +1,25 @@
+# @package _global_
+defaults:
+  - override /hydra/launcher: joblib
+  - _self_
+
+hydra:
+  run:
+    dir: outputs/testing/${now:%Y-%m-%d}--${now:%H-%M-%S}
+  job:
+    chdir: False
+  sweep:
+    dir: outputs/${now:%Y-%m-%d}--${now:%H-%M-%S}/${wandb.group}/${wandb.job_type}
+    subdir: b-${dummy_hyperparams.b}
+  sweeper:
+    params:
+      dummy_hyperparams.a: range(1, 4, 1)
+      dummy_hyperparams.b: range(11,15,1)
+  launcher:
+    n_jobs: 3
+
+
+wandb:
+  group: "minimal-sweep"
+  job_type: "a-${dummy_hyperparams.a}"
+  name: null
